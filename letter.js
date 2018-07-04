@@ -1,24 +1,20 @@
-
-
-class Letter {
-    constructor(val) {
-        this.val = hiddenVal;
-        this.guessed = false;
-    };
-    letterGuesses() {
-        if(this.guessed) {
-            return(this.val)
+ Letter = function (val) {
+    this.val = val.toUpperCase();
+    this.guessed = false;
+    this.letterGuesses = function () {
+        if (this.guessed === true) {
+            return (this.val)
         } else {
-            return('_')
+            return ('_')
         };
     };
-    checkIt(letter) {
-        if(letter === this.val) {
+    this.checkIt = function () {
+        if (letter === this.val) {
             this.guessed === true;
             return true;
         } else {
-            return(false)
+            return (false)
         };
     };
-};
-module.exports = Letter;
+}
+module.exports = Letter
