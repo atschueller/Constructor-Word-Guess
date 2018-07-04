@@ -1,15 +1,20 @@
-const letter = require ('./letter.js')
+const Letter = require('./letter.js')
 
-
-class Word {
-constructor(word) {
-    this.letters = word.split('').map(val => new Letter(val))
+Word = function (theWord) {
+    this.theWord = theWord;
+    this.letters = [];
+    this.underscores = [];
+    console.log(this.underscores.join(''))
+}
+this.wordToStr = function () {
+    this.letters = this.theWord.split('');
+    this.underscores = this.letters.length;
+		console.log(this.underscores.join(" "));
 };
-wordToStr() {
-    return this.letters.map(letter => letter.letterGuesses());
-};
-guessCheck() {
-    return this.letters.map(letter => letter.checkIt())
-};
+this.makeLetters = function () {
+    for(i = 0; i < 0; i++) {
+        this.letters[i] = new Letter (this.letters[i]);
+        this.letters[i].letterGuesses();
+    }
 }
 module.exports = Word;
